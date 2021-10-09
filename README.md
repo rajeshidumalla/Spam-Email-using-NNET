@@ -31,9 +31,9 @@ theme_set(theme_classic())
 Loading the data files, assigning the header names and counting to check fro class imabalance.
 
 ```{r}
-spam_train <- read_csv("spam_stats315B_train.csv",
+spam_train <- read_csv("spam_train.csv",
 col_names = FALSE)
-spam_test <- read_csv("spam_stats315B_test.csv",
+spam_test <- read_csv("spam_test.csv",
 col_names = FALSE)
 header_spam <- c("make", "address", "all", "3d", "our", "over", "remove",
 "internet","order", "mail", "receive", "will",
@@ -109,10 +109,11 @@ spam_test_proc <- bake(spam_train_rec, new_data = spam_test) %>%
 select(-type)
 head(spam_train_proc, 10)
 ```
+<img width="671" alt="Screen Shot 2021-10-09 at 11 47 25 pm" src="https://user-images.githubusercontent.com/56792400/136658489-4f9c21c4-1862-49ac-bf67-2c9d3387e0f9.png">
 
-(a) Fit on the training set one hidden layer neural networks with 1, 2,…, 10 hidden units and
+Fitting on the training set one hidden layer neural networks with 1, 2,…, 10 hidden units and
 different sets of starting values for the weights (obtain in this way one model for each number
-of units). Which structural model performs best at classifying on the test set?
+of units). We will know which structural model performs best at classifying on the test set.
 
 ## First Model - Hidden Neural Layers
 
@@ -154,12 +155,11 @@ best_num_neurons <- num_neurons[best_performing]
 
 The best number of hidden layer neurons is 4 which provides an accuracy of 94% in the testing set.
 
-Choose the optimal regularization (weight decay for parameters 0,0.1,…,1) for the structural
+Choosing the optimal regularization (weight decay for parameters 0,0.1,…,1) for the structural
 model found above by averaging your estimators of the misclassification error on the test
-set. The average should be over 10 runs with different starting values. Describe your final
-best model obtained from the tuning process: number of hidden units and the corresponding
-value of the regularization parameter. What is an estimation of the misclassification error of
-your model?
+set. The average will be over 10 runs with different starting values.
+
+
 
 ## Second Model - Weight Decays
 
