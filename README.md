@@ -1,6 +1,6 @@
 ## Libraries Import
 
-```{r}
+```r
 # Importing libraries and set up the work environment
 library(knitr)
 library(readxl)
