@@ -17,9 +17,9 @@ theme_set(theme_classic())
 
 # Data Import
 
-spam_train <- read_csv("spam_stats315B_train.csv",
+spam_train <- read_csv("spam_train.csv",
                        col_names = FALSE)
-spam_test <- read_csv("spam_stats315B_test.csv",
+spam_test <- read_csv("spam_test.csv",
                       col_names = FALSE)
 header_spam <- c("make", "address", "all", "3d", "our", "over", "remove",
                  "internet","order", "mail", "receive", "will",
